@@ -93,7 +93,7 @@ Portfolio-main/
 1. Go to your repository settings
 2. Navigate to "Pages" section
 3. Select the main branch as the source
-4. Your site will be published at `https://n1kh1lt0x1n.github.io/Nikhil-Portfolio/`
+4. Your site will be published at `https://portfolio-main-chi-murex.vercel.app/`
 
 ### Other Platforms
 - **Netlify**: Drag and drop the folder or connect your GitHub repo
@@ -202,6 +202,7 @@ This project is open source and available under the [Apache 2.0 License](LICENSE
 ---
 -->
 > Made with ❤️ by Tirth Patel | Computer Science Sophomore | AI/ML Enthusiast
+
 
 
 
