@@ -184,6 +184,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Update icons
     function updateThemeIcon(theme) {
+        if (!iconMoon || !iconSun) return;
+        
         if (theme === "light") {
             iconMoon.classList.add("hidden");
             iconSun.classList.remove("hidden");
