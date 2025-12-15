@@ -130,6 +130,28 @@ body {
 	opacity: 0.35;
 }
 
+/* Icon morph animation */
+.theme-icon {
+  position: absolute;
+  transition:
+    opacity 0.25s ease,
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hidden state */
+.theme-icon.hidden {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.6);
+  pointer-events: none;
+}
+
+/* Visible state */
+.theme-icon:not(.hidden) {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+
 /* Button position */
 .theme-toggle-btn {
   position: fixed;
