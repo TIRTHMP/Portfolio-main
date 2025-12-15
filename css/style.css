@@ -103,6 +103,11 @@ html {
   --bg-color: #121212;  
   --text-color: #f5f5f5; 
 }
+/* Light theme overrides */
+[data-theme="light"] {
+	--particle-color: #2563eb; /* soft blue */
+	--particle-line: #2563eb;
+}
 
 /* light theme */
 body.light {
