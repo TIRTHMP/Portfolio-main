@@ -428,3 +428,8 @@ function showNotification(message, type = 'info') {
         setTimeout(() => notification.remove(), 300);
     }, 3000);
 }
+
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    if (loader) loader.style.display = "none";
+});
