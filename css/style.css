@@ -246,11 +246,31 @@ body {
 }
 
 /* ===============================
+   Theme Cards – Base + Light Mode
+================================ */
+
+/* Base card style (all themes) */
+.theme-card {
+  background-color: var(--bg-card);
+  border-radius: 16px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* LIGHT MODE – make cards visible */
+[data-theme="light"] .theme-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ===============================
    Dark Mode – Remove Card Borders
 ================================ */
 
 [data-theme="dark"] .theme-card {
   border: none !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
 
