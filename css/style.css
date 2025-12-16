@@ -217,3 +217,36 @@ body {
 	background-color: var(--bg-main);
 	color: var(--text-main);
 }
+
+/* ===============================
+   Dark Mode – Remove White Borders
+================================ */
+
+/* Labels */
+[data-theme="dark"] label {
+  border: none !important;
+}
+
+/* Inputs & textarea */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea {
+  border: 1px solid rgba(75, 85, 99, 0.4); /* subtle dark border */
+  background-color: rgba(17, 24, 39, 0.6);
+  color: #e5e7eb;
+}
+
+/* Remove focus white outline */
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 1px var(--accent-primary);
+}
+
+/* Placeholder text */
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: #9ca3af;
+}
+
+
