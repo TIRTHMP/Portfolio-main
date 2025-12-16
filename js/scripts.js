@@ -322,15 +322,15 @@ async function fetchGitHubStats() {
         if (statsContainer && data) {
             statsContainer.innerHTML = `
                 <div class="grid grid-cols-3 gap-4 text-center">
-                    <div class="bg-gray-800/50 rounded-lg p-4">
+                    <div class="theme-card rounded-lg p-4">
                         <div class="text-2xl font-bold text-cyan-400">${data.public_repos || 0}</div>
                         <div class="text-sm text-gray-400">Repositories</div>
                     </div>
-                    <div class="bg-gray-800/50 rounded-lg p-4">
+                    <div class="theme-card rounded-lg p-4">
                         <div class="text-2xl font-bold text-purple-400">${data.followers || 0}</div>
                         <div class="text-sm text-gray-400">Followers</div>
                     </div>
-                    <div class="bg-gray-800/50 rounded-lg p-4">
+                    <div class="theme-card rounded-lg p-4">
                         <div class="text-2xl font-bold text-green-400">${data.following || 0}</div>
                         <div class="text-sm text-gray-400">Following</div>
                     </div>
