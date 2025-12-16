@@ -312,5 +312,39 @@ body {
 }
 
 
+/* ===============================
+   Theme Inputs – Final Fix
+================================ */
+
+/* Base input style */
+.theme-input {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* LIGHT THEME – subtle visible border */
+[data-theme="light"] .theme-input {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db; /* light gray border */
+}
+
+/* DARK THEME – no border */
+[data-theme="dark"] .theme-input {
+  background-color: rgba(17, 24, 39, 0.6);
+  border: none;
+}
+
+/* Focus state (both themes) */
+.theme-input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.35);
+}
+
+/* Placeholder text */
+.theme-input::placeholder {
+  color: var(--text-muted);
+}
 
 
