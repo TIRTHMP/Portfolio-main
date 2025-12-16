@@ -98,11 +98,7 @@ html {
 		color: black !important;
 	}
 }
-/* Default dark theme */
-:root {
-  --bg-color: #121212;  
-  --text-color: #f5f5f5; 
-}
+
 /* Light theme overrides */
 [data-theme="light"] {
 	--particle-color: #2563eb; /* soft blue */
@@ -172,33 +168,6 @@ body {
   filter: drop-shadow(0 0 6px rgba(37, 99, 235, 0.6));
 }
 
-/* ===============================
-   Theme Variables
-================================ */
-
-/* Default DARK theme */
-:root {
-  --bg-color: #0a0a0a;
-  --text-color: #e5e7eb;
-  --particle-color: #22d3ee;
-  --particle-line: #22d3ee;
-}
-
-/* LIGHT theme */
-[data-theme="light"] {
-  --bg-color: #ffffff;
-  --text-color: #1f2937;
-  --particle-color: #2563eb;
-  --particle-line: #2563eb;
-}
-
-/* Apply variables */
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-
 /* ============================
    Project Card Hover
 ============================= */
@@ -207,3 +176,44 @@ body {
 	transform: translateY(-4px);
 	box-shadow: 0 20px 45px rgba(34, 211, 238, 0.25);
 } 
+
+
+
+
+/* ===========================
+Switch to Light theme
+============================== */
+
+
+:root {
+	--bg-main: #0a0a0a;
+	--bg-section: linear-gradient(to bottom, #000000, #111827);
+	--bg-card: rgba(17, 24, 39, 0.55);
+
+	--text-main: #e5e7eb;
+	--text-muted: #9ca3af;
+
+	--border-main: rgba(31, 41, 55, 0.8);
+
+	--particle-color: #22d3ee;
+	--particle-line: #22d3ee;
+}
+
+[data-theme="light"] {
+	--bg-main: #f9fafb;
+	--bg-section: linear-gradient(to bottom, #ffffff, #f3f4f6);
+	--bg-card: rgba(255, 255, 255, 0.95);
+
+	--text-main: #111827;
+	--text-muted: #4b5563;
+
+	--border-main: #d1d5db;
+
+	--particle-color: #2563eb;
+	--particle-line: #2563eb;
+}
+
+body {
+	background-color: var(--bg-main);
+	color: var(--text-main);
+}
