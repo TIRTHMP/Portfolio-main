@@ -160,59 +160,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
-    function safeInitParticles() {
-        const el = document.getElementById("particles-js");
-        if (!el) return:
+    // Theme Toggle (Default: Dark)
+    const themeToggleBtn = document.getElementById("theme-toggle");
+    const iconMoon = document.getElementById("icon-moon");
+    const iconSun = document.getElementById("icon-sun");
 
-            el.style.opacity = "0";
+    //Apply saved theme or default to dark
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+    updateThemeIcon(savedTheme);
+    initParticles();
 
-        setTimeout(() => {
+    //Toggle theme on click
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener("click", () => {
+            const currentTheme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+
+            document.documentElement.setAttribute("data-theme", currentTheme);
+            localStorage.setItem("theme", currentTheme);
+            updateThemeIcon(currentTheme);
             initParticles();
-            el.style.opacity = "1";
-        }, 120);
+        });
     }
 
-    const themeToggleBtn = document.getElementById("theme-toggle");
-const iconMoon = document.getElementById("icon-moon");
-const iconSun = document.getElementById("icon-sun");
+    // Update icons
+    function updateThemeIcon(theme) {
+        if (!iconMoon || !iconSun) return;
+        
+        if (theme === "light") {
+            iconMoon.classList.add("hidden");
+            iconSun.classList.remove("hidden");
+        } else {
+            iconSun.classList.add("hidden");
+            iconMoon.classList.remove("hidden");
+        }
+    }
 
-const root = document.documentElement;
-
-/* Apply saved theme early */
-const savedTheme = localStorage.getItem("theme") || "dark";
-root.setAttribute("data-theme", savedTheme);
-updateThemeIcon(savedTheme);
-
-/* Theme toggle */
-themeToggleBtn?.addEventListener("click", () => {
-  root.classList.add("no-theme-transition");
-
-  const nextTheme =
-    root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-
-  requestAnimationFrame(() => {
-    root.setAttribute("data-theme", nextTheme);
-    localStorage.setItem("theme", nextTheme);
-    updateThemeIcon(nextTheme);
-    safeInitParticles();
-  });
-
-  setTimeout(() => {
-    root.classList.remove("no-theme-transition");
-  }, 60);
-});
-
-/* Icon morph */
-function updateThemeIcon(theme) {
-  if (theme === "light") {
-    iconMoon.classList.add("hidden");
-    iconSun.classList.remove("hidden");
-  } else {
-    iconSun.classList.add("hidden");
-    iconMoon.classList.remove("hidden");
-  }
-}
-
+    initParticles();
     
     // Set initial styles for animated elements
     document.querySelectorAll('.card-hover, .book, .timeline-item').forEach(element => {
