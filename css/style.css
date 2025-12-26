@@ -350,11 +350,28 @@ body {
 
 /* ===============================
    Fix Theme Toggle Text Flash
-================================ */
+================================ 
 
 .send-message-btn {
   color: #ffffff !important;
   transition: background 0.3s ease, transform 0.2s ease;
+} */
+
+/* ===============================
+   Send Message Button – Theme Safe
+================================ */
+
+.send-message-btn {
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
+/* Light mode → black text */
+[data-theme="light"] .send-message-btn {
+  color: #111827; /* near-black */
+}
+
+/* Dark mode → white text */
+[data-theme="dark"] .send-message-btn {
+  color: #ffffff;
+}
 
